@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-    <title>代码 - Antonius&#39;s Blog</title>
+    <title>git clone 报错 - Antonius&#39;s Blog</title>
+  
+    <meta name="keywords" content="git">
   
   
 
@@ -153,13 +155,13 @@
             
             
               <li>
-                <a class="flat-box" href=/code/
+                <a class="flat-box" href=/projects/
                   
                   
                   
-                    id="code"
+                    id="projects"
                   >
-                  <i class='fa fa-code fa-fw'></i>代码
+                  <i class='fa fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -235,13 +237,13 @@
               
             
               <li>
-                <a class="flat-box" href=/code/
+                <a class="flat-box" href=/projects/
                   
                   
                   
-                    id="code"
+                    id="projects"
                   >
-                  <i class='fa fa-code fa-fw'></i>代码
+                  <i class='fa fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -268,7 +270,7 @@
   
 
   
-    <article id="code" class="post white-box reveal shadow article-type-code" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -280,8 +282,8 @@
         
           
   <h1 class="title">
-    <a href="/code/index.html">
-      代码
+    <a href="/2020/05/10/test/">
+      git clone 报错
     </a>
   </h1>
 
@@ -304,6 +306,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/git/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>git</p>
+    </a>
+  </div>
+
 
             
           
@@ -311,7 +321,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 12, 2020</p>
+    <p>发布于：May 10, 2020</p>
   </a>
 </div>
 
@@ -334,10 +344,120 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
+          <h2 id="git-clone-报错"><a href="#git-clone-报错" class="headerlink" title="git clone 报错"></a>git clone 报错</h2><h4 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="1-调整缓存"><a href="#1-调整缓存" class="headerlink" title="1.调整缓存"></a>1.调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
+<h5 id="2。调整网络速度限制"><a href="#2。调整网络速度限制" class="headerlink" title="2。调整网络速度限制"></a>2。调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
+
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--gloabl -system -local 区别</span><br><span class="line">上面三个参数的意义</span><br><span class="line"></span><br><span class="line">--depth 1 含义</span><br><span class="line">git fetch --unshallow</span><br><span class="line">能不能用 git pull?</span><br></pre></td></tr></table></figure>
+<h5 id="3-分批更新"><a href="#3-分批更新" class="headerlink" title="3.分批更新"></a>3.分批更新</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">浅层clone</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis themes&#x2F;volantis  --depth 1</span><br><span class="line"></span><br><span class="line">cd thems&#x2F;volantis</span><br><span class="line">git fetch --unshallow</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
           
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>欢迎转发推荐收藏！</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://antoniusblog.cn/2020/05/10/test/>http://antoniusblog.cn/2020/05/10/test/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
           
         </div>
         
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-18T22:54:25+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 18, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/git/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>git</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/05/11/test1/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>test1</p>
+                <p class='content'></p>
+              </a>
+            
+            
+              <a class='next' href='/2020/05/01/hello-world/'>
+                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+              </a>
+            
+          </div>
         
       </section>
     </article>
@@ -377,6 +497,13 @@
 
 
 
+  <script>
+    window.subData = {
+      title: 'git clone 报错',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -387,6 +514,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-报错"><span class="toc-text">git clone 报错</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><span class="toc-text">由于资源太大或者网络连接速度太慢导致clone出错，错误信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-调整缓存"><span class="toc-text">1.调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2。调整网络速度限制"><span class="toc-text">2。调整网络速度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-分批更新"><span class="toc-text">3.分批更新</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </section>
 
 
   
@@ -463,22 +604,22 @@
       
     
       
-        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
-        Use
+        本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        as theme, total visits
+        作为主题，总访问量为
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          times
+          次
         
       
     
       
         <div class='copyright'>
-        <p><a href="https://antoniusblog.cn">Copyright © 2017-2020 Mr. X</a></p>
+        <p><a href="http://antoniusblog.cn">Copyright © 2017-2020 Mr. X</a></p>
 
         </div>
       

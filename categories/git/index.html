@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>test - Antonius&#39;s Blog</title>
+    <title>分类：git - Antonius&#39;s Blog</title>
   
   
 
@@ -153,13 +155,13 @@
             
             
               <li>
-                <a class="flat-box" href=/code/
+                <a class="flat-box" href=/projects/
                   
                   
                   
-                    id="code"
+                    id="projects"
                   >
-                  <i class='fa fa-code fa-fw'></i>代码
+                  <i class='fa fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -235,13 +237,13 @@
               
             
               <li>
-                <a class="flat-box" href=/code/
+                <a class="flat-box" href=/projects/
                   
                   
                   
-                    id="code"
+                    id="projects"
                   >
-                  <i class='fa fa-code fa-fw'></i>代码
+                  <i class='fa fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -264,12 +266,25 @@
     <div class='body-wrapper'>
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -279,11 +294,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/05/11/test/">
-      test
+  <h2 class="title">
+    <a href="/2020/05/10/test/">
+      git clone 报错
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -304,6 +319,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/git/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>git</p>
+    </a>
+  </div>
+
 
             
           
@@ -311,9 +334,14 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 11, 2020</p>
+    <p>发布于：May 10, 2020</p>
   </a>
 </div>
+
+            
+          
+            
+              
 
             
           
@@ -331,10 +359,10 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          <h2 id="git-clone-报错"><a href="#git-clone-报错" class="headerlink" title="git clone 报错"></a>git clone 报错</h2><h4 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git-clone-报错"><a href="#git-clone-报错" class="headerlink" title="git clone 报错"></a>git clone 报错</h2><h4 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
 <h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="1-调整缓存"><a href="#1-调整缓存" class="headerlink" title="1.调整缓存"></a>1.调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
 <h5 id="2。调整网络速度限制"><a href="#2。调整网络速度限制" class="headerlink" title="2。调整网络速度限制"></a>2。调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
 
@@ -346,204 +374,149 @@
 
 
 
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>欢迎转发推荐收藏！</p>
-
-          
-        
-          
-            <p>本文永久链接是：<a href=http://antoniusblog.cn/2020/05/11/test/>http://antoniusblog.cn/2020/05/11/test/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-11T22:54:34+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 11, 2020</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-
-        
-      
-        
       
     </div>
+    
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/2020/05/11/test1/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>test1</p>
-                <p class='content'></p>
-              </a>
-            
-            
-              <a class='next' href='/2020/05/01/hello-world/'>
-                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
+      
+    
+  </section>
   
-
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
-
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'test',
-      tools: true
-    }
-  </script>
-
+    
+  
 
 </div>
 <aside class='l_side'>
   
   
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/AntoniusWang/CDN@1.0/avatar/avatar.jpeg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Antonius's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/categories/"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:niuswang@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/AntoniusWang"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=63035382"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
 
   
     
     
+  
 
-
-  <section class="widget toc-wrapper shadow desktop mobile">
+  <section class="widget category shadow desktop">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-报错"><span class="toc-text">git clone 报错</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><span class="toc-text">由于资源太大或者网络连接速度太慢导致clone出错，错误信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-调整缓存"><span class="toc-text">1.调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2。调整网络速度限制"><span class="toc-text">2。调整网络速度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-分批更新"><span class="toc-text">3.分批更新</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/git/" href="/categories/git/"
+            id="categoriesgit"
+            ><div class='name'>git</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
     </div>
   </section>
 
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/git/" style="font-size: 14px; color: #999">git</a>
+    </div>
+  </section>
+
+
+  
 
   
 
@@ -619,22 +592,22 @@
       
     
       
-        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
-        Use
+        本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        as theme, total visits
+        作为主题，总访问量为
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          times
+          次
         
       
     
       
         <div class='copyright'>
-        <p><a href="https://antoniusblog.cn">Copyright © 2017-2020 Mr. X</a></p>
+        <p><a href="http://antoniusblog.cn">Copyright © 2017-2020 Mr. X</a></p>
 
         </div>
       
@@ -756,60 +729,6 @@
 
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick','mail','link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function(item){
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-  var valine = new Valine();
-  function emoji(path, idx, ext) {
-      return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'robohash',
-    lang:'zh-cn',
-    visitor: 'true',
-    highlight: 'true',
-    mathJax: 'false',
-    enableQQ: 'true',
-    requiredFields: requiredFields,
-    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
-  })
-  </script>
 
 
 
