@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：git - Antonius&#39;s Blog</title>
+    <title>Tag: git - Antonius&#39;s Blog</title>
   
   
 
@@ -362,21 +362,16 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git-clone-报错"><a href="#git-clone-报错" class="headerlink" title="git clone 报错"></a>git clone 报错</h2><h4 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="1-调整缓存"><a href="#1-调整缓存" class="headerlink" title="1.调整缓存"></a>1.调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
-<h5 id="2。调整网络速度限制"><a href="#2。调整网络速度限制" class="headerlink" title="2。调整网络速度限制"></a>2。调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
-
-<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--gloabl -system -local 区别</span><br><span class="line">上面三个参数的意义</span><br><span class="line"></span><br><span class="line">--depth 1 含义</span><br><span class="line">git fetch --unshallow</span><br><span class="line">能不能用 git pull?</span><br></pre></td></tr></table></figure>
-<h5 id="3-分批更新"><a href="#3-分批更新" class="headerlink" title="3.分批更新"></a>3.分批更新</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">浅层clone</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis themes&#x2F;volantis  --depth 1</span><br><span class="line"></span><br><span class="line">cd thems&#x2F;volantis</span><br><span class="line">git fetch --unshallow</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+        <p>RPC failed; curl 18 transfer closed with outstanding read data remaining<br>fatal: The remote end hung up unexpectedly</p>
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2020/05/10/test/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -591,16 +586,16 @@
       
     
       
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
       
-        本站使用
+        Use
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作为主题，总访问量为
+        as theme, total visits
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
+          times
         
       
     
@@ -838,5 +833,5 @@
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
