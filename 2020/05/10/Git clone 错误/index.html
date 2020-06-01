@@ -284,7 +284,7 @@
         
           
   <h1 class="title">
-    <a href="/2020/05/10/test/">
+    <a href="/2020/05/10/Git%20clone%20%E9%94%99%E8%AF%AF/">
       git clone 报错
     </a>
   </h1>
@@ -349,18 +349,15 @@
           <p>RPC failed; curl 18 transfer closed with outstanding read data remaining<br>fatal: The remote end hung up unexpectedly</p>
 <a id="more"></a>
 
-<h2 id="git-clone-报错"><a href="#git-clone-报错" class="headerlink" title="git clone 报错"></a>git clone 报错</h2><h4 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="1-调整缓存"><a href="#1-调整缓存" class="headerlink" title="1.调整缓存"></a>1.调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
-<h5 id="2。调整网络速度限制"><a href="#2。调整网络速度限制" class="headerlink" title="2。调整网络速度限制"></a>2。调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
+<h2 id="git-clone-错误"><a href="#git-clone-错误" class="headerlink" title="git clone 错误"></a>git clone 错误</h2><h3 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="1-调整git服务配置"><a href="#1-调整git服务配置" class="headerlink" title="1.调整git服务配置"></a>1.调整git服务配置</h4><h5 id="1-1-调整缓存"><a href="#1-1-调整缓存" class="headerlink" title="1.1 调整缓存"></a>1.1 调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-调整网络速度限制"><a href="#1-2-调整网络速度限制" class="headerlink" title="1.2 调整网络速度限制"></a>1.2 调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-git-config-配置层次"><a href="#1-3-git-config-配置层次" class="headerlink" title="1.3 git config 配置层次"></a>1.3 git config 配置层次</h5><p>在执行git config 命令时可以指定配置所属的层级（系统、全局、本地）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1)系统配置 --system</span><br><span class="line">系统级配置文件是 &#x2F;etc&#x2F;gitconfig 是所有用户共同拥有的git配置。使用git config --system 可以编辑</span><br><span class="line">(2)全局配置 --global</span><br><span class="line">全局级配置文件一般是在当前用户的～&#x2F;.gitconfig 属于当前用户的git配置。使用 git config --global 可以编辑</span><br><span class="line">(3)本地配置 --local</span><br><span class="line">本地配置文件一般在当前仓库目录下的.git&#x2F;config 只属于当前仓库的配置。使用git config --local可以编辑</span><br></pre></td></tr></table></figure>
 
-<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--gloabl -system -local 区别</span><br><span class="line">上面三个参数的意义</span><br><span class="line"></span><br><span class="line">--depth 1 含义</span><br><span class="line">git fetch --unshallow</span><br><span class="line">能不能用 git pull?</span><br></pre></td></tr></table></figure>
-<h5 id="3-分批更新"><a href="#3-分批更新" class="headerlink" title="3.分批更新"></a>3.分批更新</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">浅层clone</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis themes&#x2F;volantis  --depth 1</span><br><span class="line"></span><br><span class="line">cd thems&#x2F;volantis</span><br><span class="line">git fetch --unshallow</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+<h4 id="2-分批clone"><a href="#2-分批clone" class="headerlink" title="2. 分批clone"></a>2. 分批clone</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1) 浅层clone</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;XXXX  --depth 1</span><br><span class="line">(2) 获取剩余</span><br><span class="line">cd XXXX</span><br><span class="line">git fetch --unshallow</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-浅层克隆"><a href="#2-1-浅层克隆" class="headerlink" title="2.1 浅层克隆"></a>2.1 浅层克隆</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;XXXX  --depth 1</span><br><span class="line"></span><br><span class="line">--depth 表示克隆深度，为1时表示克隆最新一次的commit</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-获取剩余提交"><a href="#2-2-获取剩余提交" class="headerlink" title="2.2 获取剩余提交"></a>2.2 获取剩余提交</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">或者</span><br><span class="line">git pull --unshallow</span><br></pre></td></tr></table></figure>
           
             <div class='article_footer'>
               
@@ -396,7 +393,7 @@
           
         
           
-            <p>本文永久链接是：<a href=http://antoniusblog.cn/2020/05/10/test/>http://antoniusblog.cn/2020/05/10/test/</a></p>
+            <p>本文永久链接是：<a href=http://antoniusblog.cn/2020/05/10/Git%20clone%20%E9%94%99%E8%AF%AF/>http://antoniusblog.cn/2020/05/10/Git%20clone%20%E9%94%99%E8%AF%AF/</a></p>
           
         
       </blockquote>
@@ -419,10 +416,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-20T00:49:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-01T22:41:27+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 20, 2020</p>
+    <p>更新于：Jun 1, 2020</p>
   </a>
 </div>
 
@@ -528,7 +525,7 @@ Welcome to Hexo! This is your very first post. Check documentation for more info
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-报错"><span class="toc-text">git clone 报错</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><span class="toc-text">由于资源太大或者网络连接速度太慢导致clone出错，错误信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-调整缓存"><span class="toc-text">1.调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2。调整网络速度限制"><span class="toc-text">2。调整网络速度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-分批更新"><span class="toc-text">3.分批更新</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-错误"><span class="toc-text">git clone 错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><span class="toc-text">由于资源太大或者网络连接速度太慢导致clone出错，错误信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-调整git服务配置"><span class="toc-text">1.调整git服务配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-调整缓存"><span class="toc-text">1.1 调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-调整网络速度限制"><span class="toc-text">1.2 调整网络速度限制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-git-config-配置层次"><span class="toc-text">1.3 git config 配置层次</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-分批clone"><span class="toc-text">2. 分批clone</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-浅层克隆"><span class="toc-text">2.1 浅层克隆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-获取剩余提交"><span class="toc-text">2.2 获取剩余提交</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
