@@ -349,8 +349,9 @@
           <p>RPC failed; curl 18 transfer closed with outstanding read data remaining<br>fatal: The remote end hung up unexpectedly</p>
 <a id="more"></a>
 
-<h2 id="git-clone-错误"><a href="#git-clone-错误" class="headerlink" title="git clone 错误"></a>git clone 错误</h2><h3 id="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><a href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息" class="headerlink" title="由于资源太大或者网络连接速度太慢导致clone出错，错误信息"></a>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="1-调整git服务配置"><a href="#1-调整git服务配置" class="headerlink" title="1.调整git服务配置"></a>1.调整git服务配置</h4><h5 id="1-1-调整缓存"><a href="#1-1-调整缓存" class="headerlink" title="1.1 调整缓存"></a>1.1 调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
+<h2 id="git-clone-错误"><a href="#git-clone-错误" class="headerlink" title="git clone 错误"></a>git clone 错误</h2><p>由于资源太大或者网络连接速度太慢导致clone出错，错误信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: The remote end hung up unexpectedly</span><br></pre></td></tr></table></figure>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="1-调整git服务配置"><a href="#1-调整git服务配置" class="headerlink" title="1.调整git服务配置"></a>1.调整git服务配置</h4><h5 id="1-1-调整缓存"><a href="#1-1-调整缓存" class="headerlink" title="1.1 调整缓存"></a>1.1 调整缓存</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  http.postBuffer 524288000</span><br></pre></td></tr></table></figure>
 <h5 id="1-2-调整网络速度限制"><a href="#1-2-调整网络速度限制" class="headerlink" title="1.2 调整网络速度限制"></a>1.2 调整网络速度限制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config http:lowSpeedLimit 0</span><br><span class="line">git config http:lowSpeedTime 999999</span><br></pre></td></tr></table></figure>
 <h5 id="1-3-git-config-配置层次"><a href="#1-3-git-config-配置层次" class="headerlink" title="1.3 git config 配置层次"></a>1.3 git config 配置层次</h5><p>在执行git config 命令时可以指定配置所属的层级（系统、全局、本地）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1)系统配置 --system</span><br><span class="line">系统级配置文件是 &#x2F;etc&#x2F;gitconfig 是所有用户共同拥有的git配置。使用git config --system 可以编辑</span><br><span class="line">(2)全局配置 --global</span><br><span class="line">全局级配置文件一般是在当前用户的～&#x2F;.gitconfig 属于当前用户的git配置。使用 git config --global 可以编辑</span><br><span class="line">(3)本地配置 --local</span><br><span class="line">本地配置文件一般在当前仓库目录下的.git&#x2F;config 只属于当前仓库的配置。使用git config --local可以编辑</span><br></pre></td></tr></table></figure>
@@ -416,7 +417,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-01T22:41:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-01T22:52:09+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jun 1, 2020</p>
@@ -525,7 +526,7 @@ Welcome to Hexo! This is your very first post. Check documentation for more info
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-错误"><span class="toc-text">git clone 错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#由于资源太大或者网络连接速度太慢导致clone出错，错误信息"><span class="toc-text">由于资源太大或者网络连接速度太慢导致clone出错，错误信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决办法"><span class="toc-text">解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-调整git服务配置"><span class="toc-text">1.调整git服务配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-调整缓存"><span class="toc-text">1.1 调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-调整网络速度限制"><span class="toc-text">1.2 调整网络速度限制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-git-config-配置层次"><span class="toc-text">1.3 git config 配置层次</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-分批clone"><span class="toc-text">2. 分批clone</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-浅层克隆"><span class="toc-text">2.1 浅层克隆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-获取剩余提交"><span class="toc-text">2.2 获取剩余提交</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone-错误"><span class="toc-text">git clone 错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法"><span class="toc-text">解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-调整git服务配置"><span class="toc-text">1.调整git服务配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-调整缓存"><span class="toc-text">1.1 调整缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-调整网络速度限制"><span class="toc-text">1.2 调整网络速度限制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-git-config-配置层次"><span class="toc-text">1.3 git config 配置层次</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-分批clone"><span class="toc-text">2. 分批clone</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-浅层克隆"><span class="toc-text">2.1 浅层克隆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-获取剩余提交"><span class="toc-text">2.2 获取剩余提交</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -604,16 +605,16 @@ Welcome to Hexo! This is your very first post. Check documentation for more info
       
     
       
-        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
       
-        Use
+        本站使用
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        as theme, total visits
+        作为主题，总访问量为
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          times
+          次
         
       
     
